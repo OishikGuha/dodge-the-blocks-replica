@@ -20,6 +20,7 @@ public class BlockSpawner : MonoBehaviour
         {
             SpawnBlocks();
             timeToSpawn = Time.time + timeBetweenWaves;
+            Debug.Log(Time.time);
         }
     }
 
@@ -31,7 +32,8 @@ public class BlockSpawner : MonoBehaviour
         {
             if (randomIndex != i)
             {
-                Instantiate(blockPrefab, spawnPoints[i].position, Quaternion.identity);
+                GameObject obj = Instantiate(blockPrefab, spawnPoints[i].position, Quaternion.identity);
+
             }
         }
     }

@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float speed = 20f;
     public float mapWidth = 5f;
+
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,15 +23,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        Vector2 x = Input.mousePosition;
+        x = Camera.main.ScreenToWorldPoint(x);
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        x.x = Mathf.Clamp(x.x, -mapWidth, mapWidth);
 
-        Vector2 newPos = rb.position + Vector2.right * x * speed * Time.deltaTime;
-
-        newPos.x = Mathf.Clamp(newPos.x, -mapWidth, mapWidth);
-
-        rb.MovePosition(newPos);   
+        rb.MovePosition(x);
 
     }
 
