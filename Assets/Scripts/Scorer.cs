@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scorer : MonoBehaviour
 {
-
+    [Range(0f, 100f)]
     public float scoreMultiplier = 1f;
 
     private float target;
@@ -15,7 +15,7 @@ public class Scorer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        target += 1;
     }
 
     // Update is called once per frame
@@ -26,4 +26,11 @@ public class Scorer : MonoBehaviour
 
         rb.MovePosition(new Vector2(target, 0f));
     }
+
+    public void setMult(float num)
+    {
+        scoreMultiplier = num;
+        Debug.Log(scoreMultiplier);
+    }
+
 }

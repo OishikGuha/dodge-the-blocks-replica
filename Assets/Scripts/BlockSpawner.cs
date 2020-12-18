@@ -20,7 +20,6 @@ public class BlockSpawner : MonoBehaviour
         {
             SpawnBlocks();
             timeToSpawn = Time.time + timeBetweenWaves;
-            Debug.Log(Time.time);
         }
     }
 
