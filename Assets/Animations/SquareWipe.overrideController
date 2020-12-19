@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SquareWipe
+  m_Controller: {fileID: 9100000, guid: d57598e2da8f2d24687aa3242d7814e4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95256fddfc050364a8e4338368307f6f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: af8bb17c0ae1c9b49adb0d19c7252020, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2aac2839a07ca3d4383f8fb2254415bf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 07f9fce42f47e754db460d7c645b152a, type: 2}
