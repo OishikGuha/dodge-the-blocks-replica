@@ -32,5 +32,4 @@ public class Scorer : MonoBehaviour
         scoreMultiplier = num;
         Debug.Log(scoreMultiplier);
     }
-
 }

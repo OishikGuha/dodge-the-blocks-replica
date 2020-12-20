@@ -20,4 +20,8 @@ public class MenuManager : MonoBehaviour
         loader.SwitchLevel();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

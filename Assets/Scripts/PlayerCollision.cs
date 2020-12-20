@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.collider.tag == "Obstacle")
         {
+            FindObjectOfType<SoundManager>().Play("Player Lose");
             LostScript.isOn = true;
         }
     }
