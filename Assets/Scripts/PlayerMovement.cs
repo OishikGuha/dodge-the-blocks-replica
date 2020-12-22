@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public GameObject mouseInput;
+    public GameObject keyInput;
+
     public float mapWidth = 5f;
     public float speed = 10f;
 
-    private bool switchKey = false;
+    public static bool switchKey = true;
 
     private Rigidbody2D rb;
 
@@ -26,34 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //mouse Input
-        Vector2 x = Input.mousePosition;
-        x = Camera.main.ScreenToWorldPoint(x);
-
-        float xKey = Input.GetAxis("Horizontal");
-
-        x.x = Mathf.Clamp(x.x, -mapWidth, mapWidth);
-        xKey = Mathf.Clamp(x.x, -mapWidth, mapWidth);
-
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            Debug.Log(switchKey);
-            switchKey = true;
-        }
-        else if (Input.GetKey(KeyCode.Tab))
-        {
-            Debug.Log(switchKey);
-            switchKey = false;
-        }
-
         if (switchKey)
         {
-            rb.MovePosition(new Vector2(xKey * speed * Time.deltaTime, 0f));
+            mouseInput.SetActive(true);
+            keyInput.SetActive(false);
         }
         else
         {
-            rb.MovePosition(x);
+            mouseInput.SetActive(false);
+            keyInput.SetActive(true);
         }
     }
-
 }
